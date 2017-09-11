@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name></display-name>
+
+
+	<filter>
+		<filter-name>encodeFilter</filter-name>
+		<filter-class>com.kk.filter.EncodeFilter</filter-class>
+		<init-param>
+			<param-name>encode</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ignore</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodeFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+	<filter>
+		<filter-name>loginFilter</filter-name>
+		<filter-class>com.kk.filter.LoginFilter</filter-class>
+
+		<init-param>
+			<param-name>ignore</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<init-param>
+			<param-name>permitUrls</param-name>
+			<param-value>/Found.jsp,/login.jsp,/verification_code.jsp,/LoginClServlet,/SendEmailServlet,/images/QQ.png,/images/login2.jpg</param-value>
+		</init-param>
+		<init-param>
+			<param-name>gotoUrl</param-name>
+			<param-value>/login.jsp</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>loginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>SettingsServlet</servlet-name>
+		<servlet-class>com.kk.admin.controller.SettingsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>StuManageServlet</servlet-name>
+		<servlet-class>com.kk.admin.controller.StuManageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>TeaManageServlet</servlet-name>
+		<servlet-class>com.kk.admin.controller.TeaManageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ExistCheckServlet</servlet-name>
+		<servlet-class>com.common.controller.ExistCheckServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>SubManageServlet</servlet-name>
+		<servlet-class>com.kk.admin.controller.SubManageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>InfoManageServlet</servlet-name>
+		<servlet-class>com.kk.teacher.controller.InfoManageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>NoticeManageServlet</servlet-name>
+		<servlet-class>com.kk.admin.controller.NoticeManageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>SortServlet</servlet-name>
+		<servlet-class>com.common.controller.SortServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>LoginClServlet</servlet-name>
+		<servlet-class>com.common.controller.LoginClServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UpdateDataServlet</servlet-name>
+		<servlet-class>com.ax.subject.controller.UpdateDataServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>SendEmailServlet</servlet-name>
+		<servlet-class>com.common.controller.SendEmailServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>TeaSubManageServlet</servlet-name>
+		<servlet-class>com.kk.teacher.controller.TeaSubManageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ChooseStuServlet</servlet-name>
+		<servlet-class>com.kk.teacher.controller.ChooseStuServlet</servlet-class>
+	</servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChooseServlet</servlet-name>
+    <servlet-class>com.kk.admin.controller.ChooseServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AssignServlet</servlet-name>
+    <servlet-class>com.kk.admin.controller.AssignServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ExportServlet</servlet-name>
+    <servlet-class>com.common.controller.ExportServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UsersClServlet</servlet-name>
+    <servlet-class>com.ax.subject.controller.UsersClServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ExportServlet1</servlet-name>
+    <servlet-class>com.common.controller.ExportServlet1</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TSMServlet</servlet-name>
+    <servlet-class>TSMServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>LoginClServlet</servlet-name>
+		<url-pattern>/LoginClServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SendEmailServlet</servlet-name>
+		<url-pattern>/SendEmailServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateDataServlet</servlet-name>
+		<url-pattern>/UpdateDataServlet</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet-mapping>
+		<servlet-name>SettingsServlet</servlet-name>
+		<url-pattern>/SettingsServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>StuManageServlet</servlet-name>
+		<url-pattern>/StuManageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TeaManageServlet</servlet-name>
+		<url-pattern>/TeaManageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ExistCheckServlet</servlet-name>
+		<url-pattern>/ExistCheckServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SubManageServlet</servlet-name>
+		<url-pattern>/SubManageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>InfoManageServlet</servlet-name>
+		<url-pattern>/InfoManageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NoticeManageServlet</servlet-name>
+		<url-pattern>/NoticeManageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SortServlet</servlet-name>
+		<url-pattern>/SortServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TeaSubManageServlet</servlet-name>
+		<url-pattern>/TeaSubManageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ChooseStuServlet</servlet-name>
+		<url-pattern>/ChooseStuServlet</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChooseServlet</servlet-name>
+    <url-pattern>/ChooseServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AssignServlet</servlet-name>
+    <url-pattern>/AssignServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ExportServlet</servlet-name>
+    <url-pattern>/ExportServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UsersClServlet</servlet-name>
+    <url-pattern>/UsersClServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ExportServlet1</servlet-name>
+    <url-pattern>/ExportServlet1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TSMServlet</servlet-name>
+    <url-pattern>/teacher/TSMServlet</url-pattern>
+  </servlet-mapping>
+
+  
+</web-app>
